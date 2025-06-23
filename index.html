@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Casa de las Puertas - Puertas de Madera y Cerraduras de Alta Calidad</title>
+  
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="css/estilos.css">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8c9b76',
+            secondary: '#a67c52'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50">
+
+<!-- Header con el menú incluido -->
+<header class="absolute top-0 left-0 w-full z-50 bg-black/50 text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center font-['Montserrat']">
+    
+    <!-- Logo -->
+    <a href="/" class="text-xl text-white">La Casa de las Puertas</a>
+    
+    <!-- Menú de escritorio -->
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="#puertas" class="text-white hover:text-primary transition text-sm">Puertas</a>
+      <a href="#cerraduras" class="text-white hover:text-primary transition text-sm">Cerraduras</a>
+      <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta+a+medida"
+         class="flex items-center border border-white px-4 py-2 rounded-full text-white text-sm hover:bg-white hover:text-green-700 transition font-semibold">
+        <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
+      </a>
+    </div>
+
+    <!-- Botón mobile -->
+    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+      <i class="ri-menu-line ri-lg"></i>
+    </button>
+  </div>
+
+  <!-- Menú móvil dentro del header -->
+  <nav id="mobile-menu" class="md:hidden hidden bg-black/90 text-white px-6 py-4 space-y-4 font-['Montserrat']">
+    <a href="tienda-puertas.html#puertas" class="block text-sm hover:text-primary transition">Puertas</a>
+    <a href="tienda-cerraduras.html#cerraduras" class="block text-sm hover:text-primary transition">Cerraduras</a>
+    <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta+a+medida"
+       class="block text-sm border border-white rounded-full px-4 py-2 text-white hover:bg-white hover:text-green-700 transition text-center">
+      <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
+    </a>
+  </nav>
+</header>
+
+
+
+
+<!-- HERO con imagen a pantalla completa sin bordes -->
+<section id="hero" class="relative w-full h-screen overflow-hidden">
+  <img src="./img/hero__.jpg"
+       alt="Familia entrando a casa con puerta de madera instalada"
+       class="absolute inset-0 w-full h-full object-cover z-0" />
+  <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+  <!-- Contenido sobre imagen -->
+  <div class="relative z-20 container mx-auto px-6 lg:px-16 pt-[180px] pb-16 h-full flex items-start">
+    <div class="text-white max-w-xl">
+      <h1 class="text-3xl sm:text-5xl font-bold mb-6 leading-tight drop-shadow-lg">
+        Puertas de madera<br>personalizadas para tu hogar
+      </h1>
+      <p class="text-lg text-white/90 mb-8 leading-relaxed drop-shadow-md">
+        Más de 30 años creando puertas elegantes, seguras y duraderas. Hechas a medida con madera seleccionada, instalación incluida. Cotiza gratis por WhatsApp.
+      </p>
+      <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta+a+medida"
+         target="_blank"
+         class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-full text-base font-semibold hover:bg-green-700 transition shadow-md">
+        <i class="ri-whatsapp-line text-lg"></i> Cotiza gratis ahora
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Beneficios Section -->
+<section class="py-16 bg-gray">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">¿Por qué elegirnos?</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Nuestras puertas están hechas a medida por artesanos expertos. Te acompañamos desde la elección del diseño hasta la instalación final, con atención personalizada y más de 30 años de experiencia en todo el Perú.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <!-- Tarjeta 1 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4 mx-auto">
+          <i class="ri-brush-line ri-2x"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center mb-3">Puertas artesanales a pedido</h3>
+        <p class="text-gray-600 text-center">
+          Artesanía y personalización: cada puerta se fabrica a medida, con madera seleccionada y acabados de calidad.
+        </p>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4 mx-auto">
+          <i class="ri-time-line ri-2x"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center mb-3">+30 años de experiencia</h3>
+        <p class="text-gray-600 text-center">
+          Miles de hogares en todo el Perú han confiado en nosotros para transformar sus espacios con puertas duraderas y elegantes.
+        </p>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4 mx-auto">
+          <i class="ri-whatsapp-line ri-2x"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center mb-3">Asesoría por WhatsApp</h3>
+        <p class="text-gray-600 text-center">
+          Te guiamos paso a paso. Escríbenos y recibe atención directa, rápida y profesional desde tu celular.
+        </p>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+        <div class="w-16 h-16 flex items-center justify-center bg-green-100 text-green-600 rounded-full mb-4 mx-auto">
+          <i class="ri-store-line ri-2x"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-center mb-3">Atención en nuestro local</h3>
+        <p class="text-gray-600 text-center">
+          Visítanos para ver nuestros modelos, resolver tus dudas y elegir junto a expertos la puerta ideal para tu hogar.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Puertas Section --> 
+<section id="puertas" class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Lo más vendido<br>- PUERTAS  -</h2>
+      
+      <p class="text-gray-600 max-w-3xl mx-auto">
+        Diseños únicos y acabados de alta gama. Puertas y portones en caoba, cedro, tornillo y cachimbo. Contraplacadas enchapados en cedro.
+      </p>
+    </div>
+
+    <!-- Grid de tarjetas -->
+    <div class="grid grid-cols-2 sm:grid-cols-6 gap-4 sm:gap-6">
+
+      <!-- Tarjeta 1 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (27).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                      
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (30).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (29).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>  
+
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (28).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                    
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (31).jpg" alt="Puerta Corrediza Rústica" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                  
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="garaje text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">GARAJE</span>
+                        
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Corrediza%20Estilo%20Rústico." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+
+
+            <!-- Tarjeta puertass (2) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (2).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="interior text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+                        
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+</div>
+    <!-- Nota -->
+    <p class="text-sm text-center text-gray-500 mt-8 max-w-2xl mx-auto px-4">
+      🛈 <strong>Nota:</strong> Los precios varían según el tipo de madera, las medidas y el modelo seleccionado. ¡Escríbenos para cotizar tu diseño ideal sin compromiso!
+    </p>
+
+    <div class="text-center mt-12">
+      <a href="tienda-puertas.html"
+         class="inline-block bg-[#1a1a1a] hover:bg-gray-900 text-white font-medium px-6 py-3 rounded transition-colors">
+        Ver todas nuestras Puertas
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- Cerraduras Section -->
+<section id="cerraduras" class="py-16 bg-gray">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Lo más vendido<br>- CERRADURAS  -</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">
+       Trabajamos con marcas líderes como CANTOL y YALE. Seguridad y calidad garantizadas en cada instalación.
+      </p>
+    </div>
+
+    <!-- Grid de tarjetas -->
+    <div class="grid grid-cols-2 sm:grid-cols-6 gap-4 sm:gap-6">
+      <!-- Tarjeta 1 -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="./img/c-brisa70.jpg" alt="Modelo Brisa" class="w-full h-full object-cover">
+          
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-base font-semibold mb-2">Modelo Brisa</h3>
+          <p class="text-sm text-gray-600 mb-3">Cerradura de interior color bronce pulido. Ideal para dormitorios.</p>
+          <div class="flex flex-col items-start mt-auto gap-2">
+            <span class="text-base font-bold text-green-600">S/95.00</span>
+            <a href="https://wa.me/51948660856?text=Hola,%20quiero%20consultar%20por%20el%20Modelo%20Brisa" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded transition text-sm">
+              <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="./img/ac-bisa60.jpg" alt="Bisagra Acero Inox" class="w-full h-full object-cover">
+          
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-base font-semibold mb-2">Bisagra 3x3 Ac Inox</h3>
+          <p class="text-sm text-gray-600 mb-3">Alta resistencia y acabado inoxidable. Precio por unidad.</p>
+          <div class="flex flex-col items-start mt-auto gap-2">
+            <span class="text-base font-bold text-green-600">S/15.00</span>
+            <a href="https://wa.me/51948660856?text=Hola,%20quiero%20consultar%20por%20la%20Bisagra%20de%20acero" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded transition text-sm">
+              <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="relative aspect-square overflow-hidden">
+          <img src="./img/ce-cuadrada-negro.jpg" alt="Modelo Cuadrado" class="w-full h-full object-cover">
+         
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-base font-semibold mb-2">Modelo Cuadrado</h3>
+          <p class="text-sm text-gray-600 mb-3">Cerradura de embutir de 3 golpes. Para entrada en color negro mate.</p>
+          <div class="flex flex-col items-start mt-auto gap-2">
+            <span class="text-base font-bold text-green-600">S/260.00</span>
+            <a href="https://wa.me/51948660856?text=Hola,%20quiero%20consultar%20por%20el%20Modelo%20Cuadrado" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded transition text-sm">
+              <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 4 -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="aspect-square overflow-hidden">
+          <img src="./img/c-bola60.jpg" alt="Modelo Perilla" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-base font-semibold mb-2">Modelo Perilla</h3>
+          <p class="text-sm text-gray-600 mb-3">Cerradura de interior para dormitorio. Acero inoxidable resistente.</p>
+          <div class="flex flex-col items-start mt-auto gap-2">
+            <span class="text-base font-bold text-green-600">S/45.00</span>
+            <a href="https://wa.me/51948660856?text=Hola,%20quiero%20consultar%20por%20el%20Modelo%20Perilla" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded transition text-sm">
+              <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 5 -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="aspect-square overflow-hidden">
+          <img src="./img/ac-bisa80.jpg" alt="Bisagra Bronce Antiguo" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-base font-semibold mb-2">Bisagra 3x3 Br Antiguo</h3>
+          <p class="text-sm text-gray-600 mb-3">Diseño clásico con acabado cálido. Precio por unidad.</p>
+          <div class="flex flex-col items-start mt-auto gap-2">
+            <span class="text-base font-bold text-green-600">S/10.00</span>
+            <a href="https://wa.me/51948660856?text=Hola,%20quiero%20consultar%20por%20la%20Bisagra%20bronce%20antiguo" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded transition text-sm">
+              <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta 6 -->
+      <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+        <div class="aspect-square overflow-hidden">
+          <img src="./img/ce-S900.jpg" class="w-full h-full object-cover">
+        </div>
+        <div class="p-4 flex flex-col flex-grow">
+          <h3 class="text-base font-semibold mb-2">Modelo S900</h3>
+          <p class="text-sm text-gray-600 mb-3">Cerradura de sobreponer blindada. Alta seguridad para exteriores.</p>
+          <div class="flex flex-col items-start mt-auto gap-2">
+            <span class="text-base font-bold text-green-600">S/99.00</span>
+            <a href="https://wa.me/51948660856?text=Hola,%20quiero%20consultar%20por%20la%20cerradura%20S900" class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 rounded transition text-sm">
+              <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Consultar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+  <a href="tienda-cerraduras.html"
+     class="inline-block bg-[#1a1a1a] hover:bg-gray-900 text-white font-medium px-6 py-3 rounded transition-colors">
+    Ver todas nuestras Cerraduras
+  </a>
+</div>
+
+
+</section>
+
+
+
+
+<!-- Testimonials Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Lo que Dicen Nuestros Clientes</h2>
+      <p class="text-gray-600 max-w-3xl mx-auto">Nos enorgullece la satisfacción de nuestros clientes. Estas son algunas de las opiniones de quienes ya confiaron en nosotros.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Testimonio 1 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Excelente trabajo, la atención del personal muy buena, el acabado de las puertas magnífico! Quedamos muy satisfechos con nuestras puertas de madera, excelente relación calidad-precio."</p>
+        <div class="flex items-center">
+          <img src="img/testimonios/perfil1.jpg" alt="Foto de Jessica R." class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Jessica R.</h4>
+          </div>
+        </div>
+      </div>
+
+  <!-- Testimonio 2 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Excelente trabajo, con responsabilidad y puntualidad. 2 Portones de Carport, 3 Puertas principales en caoba, 19 puertas interiores, Escaleras Pumaquiro con acabados Varathane y DD."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold mr-4">Z</div>
+          <div>
+            <h4 class="font-semibold">Zelica R.</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Mandé a hacer 5 puertas de Cedro, el costo súper económico para la calidad y excelente acabados. Quedamos felices por el trabajo y la fachada de mi casa ahora parece otra. 😊"</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold mr-4">R</div>
+          <div>
+            <h4 class="font-semibold">Rocío C.</h4>
+          </div>
+        </div>
+      </div>
+
+       <!-- Testimonio 4 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Buen trabajo. Me solucionaron reclamo. Costo regular. Demoraron algo."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold mr-4">R</div>
+          <div>
+            <h4 class="font-semibold">Richard B.</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 5 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Excelente trabajo, me hizo el garaje de mi criadero y quedó espectacular, gracias por la buena atención y acabado 💪🏼"</p>
+        <div class="flex items-center">
+          <img src="img/testimonios/perfil5.jpg" alt="Foto de Criadero San Andrés" class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Criadero San Andrés</h4>
+          </div>
+        </div>
+      </div>
+
+   <!-- Testimonio 6 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Excelente servicio, muy atentos y cumplieron con la fecha indicada. Mi familia y yo quedamos muy contentos con el trabajo realizado."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold mr-4">M</div>
+          <div>
+            <h4 class="font-semibold">Mireilly P.</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Testimonio 7 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Excelente trabajo, de primera calidad y buen acabado, gracias por su profesionalismo."</p>
+        <div class="flex items-center">
+          <img src="img/testimonios/perfil7.jpg" alt="Foto de Yaderth M." class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Yaderth M.</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonio 8 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Excelentes puertas, bonitos diseños, buen material en su fabricación, precios accesibles, recomiendo."</p>
+        <div class="flex items-center">
+          <img src="img/testimonios/perfil8.jpg" alt="Foto de Godofredo R." class="w-12 h-12 rounded-full object-cover mr-4">
+          <div>
+            <h4 class="font-semibold">Godofredo R.</h4>
+          </div>
+        </div>
+      </div>
+
+       <!-- Testimonio 9 -->
+      <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <div class="flex text-yellow-400 mb-4">
+          <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-line"></i>
+        </div>
+        <p class="text-gray-700 mb-6">"Buena calidad de puertas."</p>
+        <div class="flex items-center">
+          <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold mr-4">J</div>
+          <div>
+            <h4 class="font-semibold">Jorge M.</h4>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16" style="background-color: #363b36;">
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">¿Listo para transformar tu hogar?</h2>
+    <p class="text-white text-lg mb-8 max-w-3xl mx-auto">
+      Escríbenos por WhatsApp y obtén asesoría gratuita para elegir la puerta perfecta para tu hogar, negocio o proyecto.
+    </p>
+
+    <div class="flex justify-center mb-8">
+      <!-- Botón WhatsApp -->
+      <a href="https://wa.me/51948660856?text=Hola%2C%20estoy%20interesado%20en%20las%20puertas%20y%20quisiera%20más%20información.%20¿Podrían%20ayudarme%3F"
+         target="_blank"
+         class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 font-medium !rounded-button whitespace-nowrap inline-flex items-center justify-center transition">
+        <!-- Icono WhatsApp -->
+        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M12.04 2C6.51 2 2 6.29 2 11.61c0 1.89.52 3.67 1.52 5.22L2 22l5.34-1.4a10.7 10.7 0 004.7 1.13c5.53 0 10.04-4.29 10.04-9.61S17.57 2 12.04 2zm5.75 13.53c-.24.68-1.42 1.32-1.94 1.4-.5.08-1.13.12-1.83-.12-.42-.14-.94-.31-1.6-.61-2.81-1.22-4.64-4.08-4.78-4.28-.14-.2-1.14-1.5-1.14-2.86s.72-2.04.98-2.33c.24-.28.52-.35.68-.35h.52c.16 0 .38 0 .55.41.2.49.68 1.7.74 1.82.06.12.1.26.02.42-.08.16-.12.26-.24.41-.12.14-.26.31-.37.42-.12.12-.24.24-.1.47.14.24.62 1.02 1.33 1.65.92.82 1.68 1.07 1.94 1.19.24.12.39.1.53-.06.14-.16.61-.7.77-.94.16-.24.32-.2.53-.12.2.08 1.3.61 1.52.73.22.12.36.18.41.28.04.1.04.59-.2 1.27z"/>
+        </svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+
+    <p class="text-white">
+      Horario de atención: Lunes a Viernes 7:00 - 17:00 | Sábados 7:00 - 13:00
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#1a1a1a] text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      
+      <!-- Información de la empresa -->
+<div>
+  <h3 class="text-2xl font-bold mb-6">La Casa de las Puertas</h3>
+  <p class="text-gray-300 mb-4 leading-relaxed">
+    Más de 30 años transformando espacios con puertas y cerraduras de calidad superior. Confía en nuestra experiencia y profesionalismo.
+  </p>
+  <div class="flex space-x-4">
+    <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+      <i class="ri-facebook-fill"></i>
+    </a>
+
+    <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+      <i class="ri-whatsapp-line"></i>
+    </a>
+  </div>
+</div>
+
+      
+      <!-- Información de contacto -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-white">Información de Contacto</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <i class="ri-map-pin-line text-green-600 mr-3 mt-1 text-lg"></i>
+            <div>
+              <p class="text-gray-300">Av. Tingo María 1338</p>
+              <p class="text-gray-300">Breña, Lima, Perú</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-phone-line text-green-600 mr-3 text-lg"></i>
+            <p class="text-gray-300">+51 948 660 856</p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Horarios de atención -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-white">Horarios de Atención</h3>
+        <div class="space-y-3">
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Lunes a Viernes</p>
+              <p class="text-gray-300 text-sm">7:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Sábados</p>
+              <p class="text-gray-300 text-sm">7:00 AM - 1:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Domingos</p>
+              <p class="text-gray-300 text-sm">Cerrado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Línea divisoria y copyright -->
+    <div class="border-t border-gray-700 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">
+          © 2025 La Casa de las Puertas. Todos los derechos reservados.
+        </p>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidad</a>
+          <a href="#" class="text-gray-400 hover:text-white transition">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/51948660856" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg z-50 transition-all hover:scale-105">
+  <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-whatsapp-fill ri-lg"></i>
+  </div>
+</a>
+<script src="js/funciones.js"></script>
+</body>
+</html>

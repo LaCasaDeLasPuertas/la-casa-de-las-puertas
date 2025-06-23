@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Puertas - La Casa de las Puertas</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Remix Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+
+  <!-- Tu hoja de estilos -->
+  <link rel="stylesheet" href="css/estilos.css" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8c9b76',
+            secondary: '#a67c52'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+
+
+<body class="bg-gray-50">
+<!-- Header con enlaces junto al botón -->
+<header class="w-full z-50 bg-[#0d0d0d] text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-4 flex justify-between items-center font-['Montserrat']">
+    
+    <!-- Logo (lleva al inicio) -->
+    <a href="index.html" class="text-xl text-white">La Casa de las Puertas</a>
+    
+    <!-- Menú + Botón de WhatsApp agrupados -->
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="tienda-puertas.html" class="text-white hover:text-primary transition text-sm">Puertas</a>
+      <a href="tienda-cerraduras.html" class="text-white hover:text-primary transition text-sm">Cerraduras</a>
+
+      <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta+a+medida"
+         class="flex items-center border border-white px-4 py-2 rounded-full text-white text-sm hover:bg-white hover:text-green-700 transition font-semibold">
+        <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
+      </a>
+    </div>
+
+    <!-- Botón mobile -->
+    <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+      <i class="ri-menu-line ri-lg"></i>
+    </button>
+  </div>
+  <!-- Menú desplegable corregido -->
+<nav id="mobile-menu" class="md:hidden hidden bg-[#0d0d0d] text-white px-6 py-4 space-y-4 font-['Montserrat']">
+  <a href="tienda-puertas.html#puertas" class="block text-sm hover:text-primary transition">Puertas</a>
+  <a href="tienda-cerraduras.html#cerraduras" class="block text-sm hover:text-primary transition">Cerraduras</a>
+  <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta+a+medida"
+     class="block text-sm border border-white rounded-full px-4 py-2 text-white hover:bg-white hover:text-green-700 transition text-center">
+    <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
+  </a>
+</nav>
+</header>
+
+
+
+
+<!-- Page Title -->
+<section class="py-8 bg-[#1a1a1a] flex items-center justify-center">
+  <div class="container mx-auto px-6">
+    <h1 class="text-3xl font-semibold text-white text-center">Nuestras Puertas</h1>
+  </div>
+</section>
+
+
+
+<!-- Sección general -->
+<section class="py-4 bg-white">
+  <div class="container mx-auto px-6">
+    <!-- Layout principal: filtros izquierda + productos derecha -->
+    <div class="flex flex-col lg:flex-row gap-6">
+
+     <!-- FILTROS A LA IZQUIERDA -->
+<aside class="hidden lg:block sticky top-24 self-start w-full max-w-[320px]">
+  <div class="bg-white border border-gray-200 rounded-xl shadow-sm p-5 space-y-6">
+    <h2 class="text-xl font-semibold text-gray-900 border-b pb-3">Filtrar por</h2>
+
+    <!-- Tipo -->
+    <div>
+      <p class="text-sm font-medium text-gray-600 mb-2">Zona</p>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="entrada" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Entrada</button>
+        <button data-filter="interior" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Interior</button>
+        <button data-filter="garaje" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Garaje</button>
+       
+      </div>
+    </div>
+
+    <!-- Material -->
+    <div>
+      <p class="text-sm font-medium text-gray-600 mb-2">Tipo</p>
+      <div class="flex flex-wrap gap-2">
+        <button data-filter="madera" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Madera</button>
+        <button data-filter="contraplacada" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Contraplacada</button>
+         <button data-filter="mampara" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Mampara</button>
+        <button data-filter="pintada" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Pintada</button>
+      </div>
+    </div>
+
+    <!-- Botón limpiar -->
+    <div>
+      <button id="clear-filters" class="mt-4 w-full py-2 text-sm font-medium text-red-600 border border-red-300 rounded-md hover:bg-red-50 transition">Limpiar filtros</button>
+    </div>
+  </div>
+</aside>
+
+<!-- BOTÓN MOSTRAR FILTROS EN MOBILE -->
+<div class="lg:hidden px-4 mb-4 text-center">
+  <button onclick="toggleMobileFilters()" class="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 rounded text-gray-700 hover:bg-gray-100 transition">
+    <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h18M3 10h18M3 16h18" />
+    </svg>
+    Mostrar filtros
+  </button>
+</div>
+
+<!-- FILTROS EN MOBILE -->
+<div id="mobile-filters" class="lg:hidden mb-6 px-4 hidden">
+  <h2 class="text-lg font-semibold mb-3 text-center">Filtrar por:</h2>
+
+  <!-- Tipo -->
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-600 text-center mb-1">Zona</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button data-filter="entrada" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Entrada</button>
+      <button data-filter="interior" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Interior</button>
+      <button data-filter="garaje" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Garaje</button>
+      
+    </div>
+  </div>
+
+  <!-- tIPO -->
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-600 text-center mb-1">Tipo</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+      <button data-filter="madera" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Madera</button>
+      <button data-filter="contraplacada" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Contraplacada</button>
+      <button data-filter="mampara" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Mampara</button>
+      <button data-filter="pintada" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Pintada</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+      <!-- PRODUCTOS A LA DERECHA -->
+      <div class="flex-1">
+        <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10">
+
+     
+            
+            <!-- Tarjeta 1 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (27).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (30).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (29).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        <span class="pintada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>  
+
+            <!-- Tarjeta 4 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (28).jpg" alt="Puerta Doble Arco Caoba" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                    
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Doble%20Arco%20en%20Caoba." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5 -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (31).jpg" alt="Puerta Corrediza Rústica" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                  
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="garaje text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">GARAJE</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20la%20puerta%20Corrediza%20Estilo%20Rústico." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+
+
+            <!-- Tarjeta puertass (2) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (2).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="interior text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+                        <span class="contraplacada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">CONTRAPLACADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (3) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (3).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (4) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (4).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (5) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (5).jpg" alt="Puerta" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                   
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (6) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (6).jpg" alt="Puerta" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                  
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (7) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (7).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (8) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (8).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        <span class="pintada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (9) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (9).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (10) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (10).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        <span class="pintada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (11) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (11).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        <span class="pintada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (12) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (12).jpg" alt="Puerta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="entrada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+                        <span class="madera text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+                        <span class="pintada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tarjeta puertass (13) -->
+            <div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+                <div class="relative aspect-square overflow-hidden">
+                    <img src="./img/puertass (13).jpg" alt="Puerta" class="w-full h-full object-cover">
+                    <!-- Etiqueta: FAVORITA -->
+                    
+                </div>
+                <div class="p-4 flex flex-col flex-grow">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="interior text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+                        <span class="contraplacada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">CONTRAPLACADA</span>
+                        <span class="pintada text-[11px] font-semibold text-gray-700 bg-gray-100 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+                    </div>
+                    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+                        <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+                    </a>
+                    </div>
+            </div>
+            <!-- Tarjeta puertass (14).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (14).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="interior text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+      <span class="mampara text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MAMPARA</span>
+      
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (15).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (15).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+   <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="interior text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+      <span class="mampara text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MAMPARA</span>
+      <span class="pintada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (16).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (16).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="interior text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+      <span class="mampara text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MAMPARA</span>
+      
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (17).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (17).jpg" alt="Puerta" class="w-full h-full object-cover">
+    <!-- Etiqueta: FAVORITA -->
+                    
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+   <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="interior text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+      <span class="mampara text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MAMPARA</span>
+      <span class="pintada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (18).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (18).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="garaje text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">GARAJE</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+      <span class="pintada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">PINTADA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (19).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (19).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="garaje text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">GARAJE</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+      
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (20).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (20).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+  <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="garaje text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">GARAJE</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (22).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (22).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+   <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="interior text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">INTERIOR</span>
+      <span class="contraplacada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">CONTRAPLACADA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjetas puertass (23) a (26).jpg -->
+<!-- Todas con etiquetas ENTRADA + MADERA -->
+<!-- Puedes duplicar este bloque 4 veces cambiando solo el número de imagen -->
+
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (23).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="entrada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+<!-- Tarjeta puertass (23).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (24).jpg" alt="Puerta" class="w-full h-full object-cover">
+    <!-- Etiqueta: FAVORITA -->
+   
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="entrada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (24).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (25).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="entrada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (25).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (26).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="entrada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">ENTRADA</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+<!-- Tarjeta puertass (26).jpg -->
+<div class="tarjeta bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow flex flex-col">
+  <div class="relative aspect-square overflow-hidden">
+    <img src="./img/puertass (21).jpg" alt="Puerta" class="w-full h-full object-cover">
+  </div>
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex gap-2 mb-4 flex-wrap">
+
+      <span class="entrada text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">GARAJE</span>
+      <span class="madera text-[11px] font-semibold text-gray-800 bg-gray-200 px-2 py-[2px] rounded shadow-sm">MADERA</span>
+    </div>
+    <a href="https://wa.me/51948660856?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20esta%20puerta." class="flex items-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded transition text-sm mt-auto font-medium">
+      <i class="ri-whatsapp-fill mr-2 text-white text-[16px]"></i> Cotizar
+    </a>
+  </div>
+</div>
+
+    
+    <!-- No Results -->
+    <div id="no-results" class="hidden py-16 text-center">
+      <div class="w-20 h-20 mx-auto mb-6 text-gray-300">
+        <i class="ri-search-line ri-3x"></i>
+      </div>
+      <h3 class="text-xl font-semibold mb-2">No se encontraron resultados</h3>
+      <p class="text-gray-600 mb-6">No hay productos que coincidan con los filtros seleccionados.</p>
+      <button id="reset-filters" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap">
+        Limpiar filtros
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/51948660856" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg z-50 transition-all hover:scale-105">
+  <div class="w-6 h-6 flex items-center justify-center">
+    <i class="ri-whatsapp-fill ri-lg"></i>
+  </div>
+</a>
+
+
+
+<!-- Footer -->
+<footer class="bg-[#1a1a1a] text-white">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      
+      <!-- Información de la empresa -->
+<div>
+  <h3 class="text-2xl font-bold mb-6">La Casa de las Puertas</h3>
+  <p class="text-gray-300 mb-4 leading-relaxed">
+    Más de 30 años transformando espacios con puertas y cerraduras de calidad superior. Confía en nuestra experiencia y profesionalismo.
+  </p>
+  <div class="flex space-x-4">
+    <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+      <i class="ri-facebook-fill"></i>
+    </a>
+
+    <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+      <i class="ri-whatsapp-line"></i>
+    </a>
+  </div>
+</div>
+
+      
+      <!-- Información de contacto -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-white">Información de Contacto</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <i class="ri-map-pin-line text-green-600 mr-3 mt-1 text-lg"></i>
+            <div>
+              <p class="text-gray-300">Av. Tingo María 1338</p>
+              <p class="text-gray-300">Breña, Lima, Perú</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-phone-line text-green-600 mr-3 text-lg"></i>
+            <p class="text-gray-300">+51 948 660 856</p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <!-- Horarios de atención -->
+      <div>
+        <h3 class="text-xl font-bold mb-6 text-white">Horarios de Atención</h3>
+        <div class="space-y-3">
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Lunes a Viernes</p>
+              <p class="text-gray-300 text-sm">7:00 AM - 5:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Sábados</p>
+              <p class="text-gray-300 text-sm">7:00 AM - 1:00 PM</p>
+            </div>
+          </div>
+          <div class="flex items-center">
+            <i class="ri-time-line text-green-600 mr-3 text-lg"></i>
+            <div>
+              <p class="text-white font-medium">Domingos</p>
+              <p class="text-gray-300 text-sm">Cerrado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Línea divisoria y copyright -->
+    <div class="border-t border-gray-700 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">
+          © 2025 La Casa de las Puertas. Todos los derechos reservados.
+        </p>
+        <div class="flex space-x-6 text-sm">
+          <a href="#" class="text-gray-400 hover:text-white transition">Política de Privacidad</a>
+          <a href="#" class="text-gray-400 hover:text-white transition">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/funciones.js"></script>
+</body>
+</html>
