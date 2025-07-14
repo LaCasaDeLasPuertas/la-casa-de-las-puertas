@@ -73,8 +73,8 @@
   </div>
   <!-- Menú desplegable corregido -->
 <nav id="mobile-menu" class="md:hidden hidden bg-[#0d0d0d] text-white px-6 py-4 space-y-4 font-['Montserrat']">
-  <a href="tienda-puertas.html#puertas" class="block text-sm hover:text-primary transition">Puertas</a>
-  <a href="tienda-cerraduras.html#cerraduras" class="block text-sm hover:text-primary transition">Cerraduras</a>
+  <a href="tienda-puertas.html#puertas" class="block text-sm hover:text-primary transition">Catálogo Puertas</a>
+  <a href="tienda-cerraduras.html#cerraduras" class="block text-sm hover:text-primary transition">Catálogo Cerraduras</a>
   <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta+a+medida"
      class="block text-sm border border-white rounded-full px-4 py-2 text-white hover:bg-white hover:text-green-700 transition text-center">
     <i class="ri-whatsapp-fill mr-2 text-lg"></i> Cotiza por WhatsApp
@@ -109,9 +109,9 @@
     <div>
       <p class="text-sm font-medium text-gray-600 mb-2">Zona</p>
       <div class="flex flex-wrap gap-2">
-        <button data-filter="entrada" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Entrada</button>
-        <button data-filter="interior" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Interior</button>
-        <button data-filter="garaje" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Garaje</button>
+        <button data-filter="entrada" data-group="zona" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Entrada</button>
+        <button data-filter="interior" data-group="zona" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Interior</button>
+        <button data-filter="garaje" data-group="zona" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Garaje</button>
        
       </div>
     </div>
@@ -120,10 +120,10 @@
     <div>
       <p class="text-sm font-medium text-gray-600 mb-2">Tipo</p>
       <div class="flex flex-wrap gap-2">
-        <button data-filter="madera" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Madera</button>
-        <button data-filter="contraplacada" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Contraplacada</button>
-         <button data-filter="mampara" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Mampara</button>
-        <button data-filter="pintada" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Pintada</button>
+        <button data-filter="madera" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Madera</button>
+        <button data-filter="contraplacada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Contraplacada</button>
+         <button data-filter="mampara" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Mampara</button>
+        <button data-filter="pintada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-100 transition">Pintada</button>
       </div>
     </div>
 
@@ -152,9 +152,9 @@
   <div class="mb-4">
     <p class="text-sm font-medium text-gray-600 text-center mb-1">Zona</p>
     <div class="flex flex-wrap gap-2 justify-center">
-      <button data-filter="entrada" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Entrada</button>
-      <button data-filter="interior" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Interior</button>
-      <button data-filter="garaje" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Garaje</button>
+      <button data-filter="entrada" data-group="zona" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Entrada</button>
+      <button data-filter="interior" data-group="zona" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Interior</button>
+      <button data-filter="garaje" data-group="zona" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Garaje</button>
       
     </div>
   </div>
@@ -163,10 +163,10 @@
   <div class="mb-4">
     <p class="text-sm font-medium text-gray-600 text-center mb-1">Tipo</p>
     <div class="flex flex-wrap gap-2 justify-center">
-      <button data-filter="madera" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Madera</button>
-      <button data-filter="contraplacada" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Contraplacada</button>
-      <button data-filter="mampara" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Mampara</button>
-      <button data-filter="pintada" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Pintada</button>
+      <button data-filter="madera" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Madera</button>
+      <button data-filter="contraplacada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Contraplacada</button>
+      <button data-filter="mampara" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Mampara</button>
+      <button data-filter="pintada" data-group="tipo" class="filter-btn px-4 py-2 border border-gray-300 rounded text-gray-700 hover:border-black hover:text-black transition">Pintada</button>
     </div>
   </div>
 </div>
@@ -704,20 +704,27 @@
   </div>
 </div>
 
-    
-    <!-- No Results -->
-    <div id="no-results" class="hidden py-16 text-center">
-      <div class="w-20 h-20 mx-auto mb-6 text-gray-300">
-        <i class="ri-search-line ri-3x"></i>
-      </div>
-      <h3 class="text-xl font-semibold mb-2">No se encontraron resultados</h3>
-      <p class="text-gray-600 mb-6">No hay productos que coincidan con los filtros seleccionados.</p>
-      <button id="reset-filters" class="bg-primary hover:bg-primary/90 text-white px-6 py-2 !rounded-button whitespace-nowrap">
-        Limpiar filtros
-      </button>
+<!-- Contenedor de tarjetas o resultados -->
+<div id="productos-contenedor" class="w-full flex justify-center items-center py-20 min-h-[300px]">
+  <!-- No Results -->
+  <div id="no-results-message" class="text-center">
+    <div class="w-20 h-20 mx-auto mb-6 text-gray-300">
+      <i class="ri-search-line ri-3x"></i>
     </div>
+    <h3 class="text-xl font-semibold mb-2">No se encontraron resultados</h3>
+    <p class="text-gray-600 mb-6">No hay productos que coincidan con los filtros seleccionados.</p>
+    <button id="reset-filters"
+      class="bg-[#1a1a1a] hover:bg-[#333] text-white px-6 py-2 rounded-md transition">
+      Limpiar filtros
+    </button>
   </div>
-</section>
+</div>
+
+
+
+
+
+    
 
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/51948660856" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-lg z-50 transition-all hover:scale-105">
@@ -728,29 +735,30 @@
 
 
 
+<!-- Separador visual para dar espacio antes del footer -->
+<div class="h-10 lg:h-16"></div>
+
 <!-- Footer -->
-<footer class="bg-[#1a1a1a] text-white">
+<footer class="bg-[#1a1a1a] text-white border-t-0">
   <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       
       <!-- Información de la empresa -->
-<div>
-  <h3 class="text-2xl font-bold mb-6">La Casa de las Puertas</h3>
-  <p class="text-gray-300 mb-4 leading-relaxed">
-    Más de 30 años transformando espacios con puertas y cerraduras de calidad superior. Confía en nuestra experiencia y profesionalismo.
-  </p>
-  <div class="flex space-x-4">
-    <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
-      <i class="ri-facebook-fill"></i>
-    </a>
+      <div>
+        <h3 class="text-2xl font-bold mb-6">La Casa de las Puertas</h3>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Más de 30 años transformando espacios con puertas y cerraduras de calidad superior. Confía en nuestra experiencia y profesionalismo.
+        </p>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a href="https://wa.me/51948660856?text=Hola%2C%20estoy%20interesado%20en%20sus%20puertas%20y%20cerraduras." target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition">
+            <i class="ri-whatsapp-line"></i>
+          </a>
+        </div>
+      </div>
 
-    <a href="https://www.facebook.com/lacasadelaspuertaslima" target="_blank" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-green-600 transition">
-      <i class="ri-whatsapp-line"></i>
-    </a>
-  </div>
-</div>
-
-      
       <!-- Información de contacto -->
       <div>
         <h3 class="text-xl font-bold mb-6 text-white">Información de Contacto</h3>
@@ -766,10 +774,9 @@
             <i class="ri-phone-line text-green-600 mr-3 text-lg"></i>
             <p class="text-gray-300">+51 948 660 856</p>
           </div>
-          
         </div>
       </div>
-      
+
       <!-- Horarios de atención -->
       <div>
         <h3 class="text-xl font-bold mb-6 text-white">Horarios de Atención</h3>
@@ -798,7 +805,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Línea divisoria y copyright -->
     <div class="border-t border-gray-700 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
@@ -813,6 +820,7 @@
     </div>
   </div>
 </footer>
+
 
 <script src="js/funciones.js"></script>
 </body>
