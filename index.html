@@ -6,21 +6,26 @@
   <title>La Casa de las Puertas – Puertas de madera en Lima</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --wood: #7a5c3a;
-      --wood-light: #c9a87c;
-      --green: #2d7a4f;
-      --green-dark: #1e5c3a;
-      --cream: #faf8f4;
-      --text: #1c1a17;
-      --muted: #6b6560;
-      --border: #e8e0d5;
+      --sand: #b08d6a;
+      --sand-light: #d4b896;
+      --sand-pale: #f0e6d8;
+      --sage: #4a7c59;
+      --sage-dark: #345c41;
+      --cream: #faf9f7;
+      --cream-warm: #f5f0ea;
+      --white: #ffffff;
+      --text: #1a1916;
+      --text-mid: #4a4540;
+      --muted: #8c857d;
+      --border: #e6ddd3;
+      --border-light: #ede8e2;
     }
 
     html { scroll-behavior: smooth; }
@@ -37,65 +42,70 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--text);
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 14px 32px;
+      padding: 16px 40px;
     }
 
     .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--wood-light);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
       text-decoration: none;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
     }
 
     .header-cta {
       display: flex;
       align-items: center;
       gap: 8px;
-      background: var(--green);
+      background: var(--sage);
       color: #fff;
-      padding: 9px 18px;
-      border-radius: 100px;
+      padding: 9px 20px;
+      border-radius: 4px;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       font-weight: 500;
+      letter-spacing: 0.02em;
       transition: background 0.2s;
     }
-    .header-cta:hover { background: var(--green-dark); }
+    .header-cta:hover { background: var(--sage-dark); }
 
     /* ── HERO ── */
     #hero {
-      background: var(--text);
-      padding: 72px 32px 64px;
+      background: var(--cream-warm);
+      padding: 80px 40px 72px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
+      gap: 64px;
       align-items: center;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .hero-left h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      color: #fff;
-      line-height: 1.1;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.08;
       margin-bottom: 20px;
     }
 
     .hero-left h1 span {
-      color: var(--wood-light);
+      color: var(--sand);
     }
 
     .hero-left p {
-      color: #b8b0a6;
-      font-size: 1rem;
-      margin-bottom: 32px;
-      max-width: 420px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 36px;
+      max-width: 400px;
+      line-height: 1.7;
     }
 
     .hero-actions {
@@ -108,18 +118,19 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: var(--green);
+      background: var(--sage);
       color: #fff;
-      padding: 14px 24px;
-      border-radius: 100px;
+      padding: 13px 24px;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 0.95rem;
       width: fit-content;
+      letter-spacing: 0.01em;
       transition: background 0.2s;
     }
-    .btn-wa:hover { background: var(--green-dark); }
-    .btn-wa i { font-size: 1.2rem; }
+    .btn-wa:hover { background: var(--sage-dark); }
+    .btn-wa i { font-size: 1.1rem; }
 
     .hero-contact-quick {
       display: flex;
@@ -128,113 +139,115 @@
     }
 
     .hero-contact-quick a {
-      color: #b8b0a6;
+      color: var(--muted);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.87rem;
       display: flex;
       align-items: center;
       gap: 8px;
       transition: color 0.2s;
     }
-    .hero-contact-quick a:hover { color: var(--wood-light); }
+    .hero-contact-quick a:hover { color: var(--sand); }
 
-    /* Pillares (por qué elegirnos) en hero derecho */
+    /* Pillares hero derecho */
     .hero-right {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
 
     .pillar {
       display: flex;
       align-items: flex-start;
-      gap: 14px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 16px 18px;
+      gap: 16px;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 18px 20px;
     }
 
     .pillar-icon {
-      font-size: 1.4rem;
-      color: var(--wood-light);
+      font-size: 1.2rem;
+      color: var(--sand);
       flex-shrink: 0;
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .pillar h3 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
       margin-bottom: 3px;
     }
 
     .pillar p {
-      font-size: 0.82rem;
-      color: #9a9089;
-      line-height: 1.4;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
     }
 
     /* ── DIVIDER ── */
     .section-divider {
-      height: 3px;
-      background: linear-gradient(to right, var(--wood), var(--wood-light), var(--wood));
-      opacity: 0.4;
+      height: 1px;
+      background: var(--border);
+      max-width: 100%;
     }
 
     /* ── SECTION BASE ── */
     section {
-      padding: 72px 32px;
+      padding: 80px 40px;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .section-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--wood);
-      margin-bottom: 10px;
+      color: var(--sand);
+      margin-bottom: 12px;
     }
 
     .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      line-height: 1.15;
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.12;
       margin-bottom: 14px;
       color: var(--text);
     }
 
     .section-sub {
       color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 520px;
+      font-size: 0.9rem;
+      max-width: 480px;
       margin-bottom: 48px;
+      line-height: 1.7;
     }
 
     /* ── GALERÍAS ── */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
     }
 
     .gallery-card {
       display: block;
       text-decoration: none;
-      border-radius: 14px;
+      border-radius: 8px;
       overflow: hidden;
-      border: 2px solid var(--border);
-      background: #fff;
+      border: 1px solid var(--border);
+      background: var(--white);
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
       position: relative;
     }
 
     .gallery-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-      border-color: var(--wood-light);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+      border-color: var(--sand-light);
     }
 
     .gallery-card-inner {
@@ -243,43 +256,45 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
-      min-height: 180px;
+      min-height: 190px;
     }
 
     .gallery-icon {
-      font-size: 2rem;
-      color: var(--wood);
+      font-size: 1.4rem;
+      color: var(--sand);
     }
 
     .gallery-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
       color: var(--text);
       line-height: 1.2;
     }
 
     .gallery-card p {
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .gallery-card .card-link {
       margin-top: auto;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--wood);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--sand);
       display: flex;
       align-items: center;
       gap: 4px;
       text-decoration: none;
+      letter-spacing: 0.02em;
     }
 
-    .gallery-card:hover .card-link { color: var(--green); }
+    .gallery-card:hover .card-link { color: var(--sage); }
 
     /* ── PROCESO ── */
-    #proceso { background: #fff; max-width: 100%; padding: 72px 0; }
-    #proceso .inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    #proceso { background: var(--cream-warm); max-width: 100%; padding: 80px 0; }
+    #proceso .inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 
     .steps {
       display: grid;
@@ -295,8 +310,8 @@
       top: 28px;
       left: 12%;
       right: 12%;
-      height: 2px;
-      background: linear-gradient(to right, var(--border), var(--wood-light), var(--border));
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--sand-light), transparent);
       z-index: 0;
     }
 
@@ -314,11 +329,12 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: var(--text);
-      color: var(--wood-light);
-      font-family: 'Playfair Display', serif;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--sand);
+      font-family: 'Cormorant Garamond', serif;
       font-size: 1.3rem;
-      font-weight: 700;
+      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -327,38 +343,20 @@
     }
 
     .step h4 {
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.87rem;
+      font-weight: 500;
       margin-bottom: 6px;
       color: var(--text);
     }
 
     .step p {
-      font-size: 0.8rem;
+      font-size: 0.79rem;
       color: var(--muted);
       line-height: 1.5;
     }
 
-    .step-note {
-      font-size: 0.78rem;
-      color: var(--wood);
-      font-style: italic;
-      margin-top: 4px;
-    }
-
-    /* Segunda fila del proceso */
-    .steps-row2 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0;
-      position: relative;
-      border-top: 1px solid var(--border);
-      margin-top: 8px;
-      padding-top: 8px;
-    }
-
     /* ── UBICACION ── */
-    #ubicacion { background: var(--cream); }
+    #ubicacion { background: var(--white); }
 
     .ubicacion-grid {
       display: grid;
@@ -380,152 +378,154 @@
     }
 
     .info-row i {
-      font-size: 1.3rem;
-      color: var(--wood);
+      font-size: 1.2rem;
+      color: var(--sage);
       margin-top: 2px;
       flex-shrink: 0;
     }
 
     .info-row strong {
       display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
+      font-size: 0.87rem;
+      font-weight: 500;
       margin-bottom: 2px;
     }
 
     .info-row p, .info-row a {
-      font-size: 0.9rem;
+      font-size: 0.87rem;
       color: var(--muted);
       text-decoration: none;
     }
 
-    .info-row a:hover { color: var(--wood); }
+    .info-row a:hover { color: var(--sand); }
 
     .horario-table {
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      background: #fff;
+      background: var(--cream-warm);
     }
 
     .horario-row {
       display: flex;
       justify-content: space-between;
-      padding: 12px 20px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
+      padding: 13px 20px;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.87rem;
     }
 
     .horario-row:last-child { border-bottom: none; }
-    .horario-row span:first-child { color: var(--text); font-weight: 500; }
+    .horario-row span:first-child { color: var(--text-mid); font-weight: 500; }
     .horario-row span:last-child { color: var(--muted); }
-    .horario-row.cerrado span:last-child { color: #c0392b; }
+    .horario-row.cerrado span:last-child { color: #a0695a; }
 
     .refrigerio-note {
-      background: #fff8f0;
-      border: 1px solid #f0d9b5;
-      border-radius: 10px;
+      background: #fdf6ee;
+      border: 1px solid var(--sand-pale);
+      border-radius: 6px;
       padding: 12px 16px;
-      font-size: 0.82rem;
-      color: #7a5c3a;
+      font-size: 0.8rem;
+      color: var(--sand);
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      margin-top: 8px;
+      margin-top: 4px;
     }
 
     /* ── TESTIMONIOS ── */
-    #testimonios { background: #fff; max-width: 100%; padding: 72px 0; }
-    #testimonios .inner { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+    #testimonios { background: var(--cream); max-width: 100%; padding: 80px 0; }
+    #testimonios .inner { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
 
     .testimonios-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 16px;
       margin-top: 48px;
     }
 
     .testimonio {
-      background: var(--cream);
-      border-radius: 12px;
-      padding: 22px;
-      border: 1px solid var(--border);
+      background: var(--white);
+      border-radius: 8px;
+      padding: 24px;
+      border: 1px solid var(--border-light);
     }
 
-    .stars { color: #d4a017; font-size: 0.85rem; margin-bottom: 10px; }
+    .stars { color: var(--sand); font-size: 0.8rem; margin-bottom: 12px; letter-spacing: 2px; }
 
     .testimonio p {
-      font-size: 0.87rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 14px;
+      line-height: 1.7;
+      margin-bottom: 16px;
       font-style: italic;
     }
 
     .testimonio-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text);
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--text-mid);
     }
 
     /* ── CTA FINAL ── */
     #cta-final {
       background: var(--text);
       max-width: 100%;
-      padding: 80px 32px;
+      padding: 88px 40px;
       text-align: center;
     }
 
     #cta-final h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
       color: #fff;
       margin-bottom: 16px;
+      line-height: 1.1;
     }
 
-    #cta-final h2 span { color: var(--wood-light); }
+    #cta-final h2 span { color: var(--sand-light); }
 
     #cta-final p {
-      color: #9a9089;
-      font-size: 0.95rem;
+      color: #7a756f;
+      font-size: 0.9rem;
       margin-bottom: 36px;
     }
 
     /* ── FOOTER ── */
     footer {
-      background: #111;
-      padding: 32px;
+      background: var(--text);
+      border-top: 1px solid #2e2b27;
+      padding: 28px 40px;
       text-align: center;
-      color: #666;
-      font-size: 0.82rem;
+      color: #55514c;
+      font-size: 0.8rem;
     }
 
     /* ── WHATSAPP FLOTANTE ── */
     .wa-float {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: 28px;
+      right: 28px;
       z-index: 999;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 60px;
-      height: 60px;
+      width: 58px;
+      height: 58px;
       background: #25D366;
       border-radius: 50%;
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
       transition: transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
     }
 
     .wa-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.65);
+      transform: scale(1.08);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
     }
 
-    .wa-float i { font-size: 1.8rem; color: #fff; }
+    .wa-float i { font-size: 1.7rem; color: #fff; }
 
-    /* Pulso */
     .wa-float::before {
       content: '';
       position: absolute;
@@ -533,39 +533,39 @@
       height: 100%;
       border-radius: 50%;
       background: #25D366;
-      opacity: 0.5;
-      animation: pulse 2s ease-out infinite;
+      opacity: 0.4;
+      animation: pulse 2.2s ease-out infinite;
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.5; }
-      100% { transform: scale(1.8); opacity: 0; }
+      0% { transform: scale(1); opacity: 0.4; }
+      100% { transform: scale(1.9); opacity: 0; }
     }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
-      header { padding: 12px 18px; }
-      .logo { font-size: 0.95rem; }
+      header { padding: 12px 20px; }
+      .logo { font-size: 1rem; }
 
       #hero {
         grid-template-columns: 1fr;
-        padding: 48px 18px 48px;
+        padding: 52px 20px 52px;
         gap: 32px;
       }
 
       .gallery-grid { grid-template-columns: 1fr; }
 
-      .steps, .steps-row2 { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; }
       .steps::before { display: none; }
 
       .ubicacion-grid { grid-template-columns: 1fr; }
 
       .testimonios-grid { grid-template-columns: 1fr; }
 
-      section { padding: 48px 18px; }
-      #proceso .inner, #testimonios .inner { padding: 0 18px; }
-      #proceso { padding: 48px 0; }
-      #testimonios { padding: 48px 0; }
+      section { padding: 52px 20px; }
+      #proceso .inner, #testimonios .inner { padding: 0 20px; }
+      #proceso { padding: 52px 0; }
+      #testimonios { padding: 52px 0; }
     }
   </style>
 </head>
@@ -580,7 +580,7 @@
 </header>
 
 <!-- HERO -->
-<div style="background: var(--text);">
+<div style="background: var(--cream-warm);">
 <section id="hero">
   <div class="hero-left">
     <h1>Puertas de madera<br>hechas a <span>medida</span></h1>
@@ -591,11 +591,11 @@
       </a>
       <div class="hero-contact-quick" style="margin-top:8px;">
         <a href="tel:+51948660856">
-          <i class="ri-phone-line" style="color:var(--wood-light)"></i>
+          <i class="ri-phone-line" style="color:var(--sand)"></i>
           +51 948 660 856
         </a>
         <a href="https://maps.google.com/?q=La+Casa+de+las+Puertas+Lima" target="_blank">
-          <i class="ri-map-pin-2-line" style="color:var(--wood-light)"></i>
+          <i class="ri-map-pin-2-line" style="color:var(--sand)"></i>
           Av. Tingo María 1338, Breña
         </a>
       </div>
@@ -645,7 +645,6 @@
 
   <div class="gallery-grid">
 
-    <!-- Puertas principales -->
     <a class="gallery-card" href="https://lacasadelaspuertas.pixieset.com/puertasprincipales/" target="_blank">
       <div class="gallery-card-inner">
         <div class="gallery-icon"><i class="ri-home-3-line"></i></div>
@@ -655,7 +654,6 @@
       </div>
     </a>
 
-    <!-- Puertas de interior -->
     <a class="gallery-card" href="https://lacasadelaspuertas.pixieset.com/puertasdeinterior/" target="_blank">
       <div class="gallery-card-inner">
         <div class="gallery-icon"><i class="ri-layout-right-line"></i></div>
@@ -665,7 +663,6 @@
       </div>
     </a>
 
-    <!-- Portones de garaje -->
     <a class="gallery-card" href="https://lacasadelaspuertas.pixieset.com/portonesdegaraje/" target="_blank">
       <div class="gallery-card-inner">
         <div class="gallery-icon"><i class="ri-car-line"></i></div>
@@ -719,7 +716,7 @@
     </div>
   </div>
 
-  <div style="text-align:center; margin-top:40px;">
+  <div style="text-align:center; margin-top:48px;">
     <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta" target="_blank" class="btn-wa" style="margin:0 auto;">
       <i class="ri-whatsapp-fill"></i> Empezar ahora
     </a>
@@ -739,18 +736,18 @@
 
     <div class="info-block">
       <div class="info-row">
-        <i class="ri-map-pin-2-fill" style="color:var(--green)"></i>
+        <i class="ri-map-pin-2-fill" style="color:var(--sage)"></i>
         <div>
           <strong>Dirección</strong>
           <p>Av. Tingo María 1338, Breña, Lima</p>
-          <a href="https://maps.google.com/?q=La+Casa+de+las+Puertas+Lima" target="_blank" style="color:var(--wood); font-size:0.83rem; margin-top:4px; display:inline-flex; align-items:center; gap:4px;">
+          <a href="https://maps.google.com/?q=La+Casa+de+las+Puertas+Lima" target="_blank" style="color:var(--sand); font-size:0.81rem; margin-top:6px; display:inline-flex; align-items:center; gap:4px;">
             <i class="ri-map-2-line"></i> Búscanos en Google Maps como "La Casa de las Puertas"
           </a>
         </div>
       </div>
 
       <div class="info-row">
-        <i class="ri-phone-fill" style="color:var(--green)"></i>
+        <i class="ri-phone-fill" style="color:var(--sage)"></i>
         <div>
           <strong>Teléfono / WhatsApp</strong>
           <a href="tel:+51948660856">+51 948 660 856</a>
@@ -837,10 +834,10 @@
 <div id="cta-final">
   <h2>¿Tienes una puerta<br>en mente? <span>Escríbenos.</span></h2>
   <p>Cotización gratis, sin compromiso. Te respondemos por WhatsApp.</p>
-  <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta" target="_blank" class="btn-wa" style="margin:0 auto; font-size:1.1rem; padding:16px 32px;">
+  <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta" target="_blank" class="btn-wa" style="margin:0 auto; font-size:1rem; padding:15px 32px;">
     <i class="ri-whatsapp-fill"></i> Cotizar por WhatsApp
   </a>
-  <p style="margin-top:20px; font-size:0.85rem;">
+  <p style="margin-top:20px; font-size:0.83rem;">
     📍 Av. Tingo María 1338, Breña &nbsp;|&nbsp; 📱 +51 948 660 856
   </p>
 </div>
@@ -854,10 +851,6 @@
 <a href="https://wa.me/51948660856?text=Hola%2C+quiero+cotizar+una+puerta" target="_blank" class="wa-float" title="Escríbenos por WhatsApp">
   <i class="ri-whatsapp-fill"></i>
 </a>
-
-<script>
-  // Mobile menu toggle (ya no hay menú complejo, pero por si acaso)
-</script>
 
 </body>
 </html>
